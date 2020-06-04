@@ -13,12 +13,12 @@ describe('index.html', function () {
         // restore the original func after test
         jest.resetModules();
     });
-
     it('body element renders', function () {
         const bodyTag = document.getElementsByTagName('body');
         expect(bodyTag).toBeTruthy();
     });
 
+    describe('header and container', () => { 
     it('header and main tags renders', function () {
         const headerTag = document.getElementsByTagName('header');
         expect(headerTag).toBeTruthy();
@@ -33,4 +33,12 @@ describe('index.html', function () {
         const headerText = headerTag.innerHTML;
         expect(headerText).toEqual(expectedText);
     });
+
+    it('button contains expected text', function () {
+        const addColumnButton = document.getElementById('add-column-button');
+        const expectedText = "Add Column";
+        const addColumnButtonText = addColumnButton.innerHTML;
+        expect(addColumnButtonText).toEqual(expectedText);
+    });
+});
 });
