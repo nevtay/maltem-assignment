@@ -26,4 +26,11 @@ describe('index.html', function () {
         const mainTag = document.getElementsByTagName('main');
         expect(mainTag).toBeTruthy();
     });
+
+    it('header contains expected text', function () {
+        const headerTag = document.getElementById('header');
+        const expectedText = "Trello Clone";
+        const headerText = headerTag.innerHTML;
+        expect(headerText).toEqual(expectedText);
+    });
 });
