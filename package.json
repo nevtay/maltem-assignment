@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/nevtay/maltem-assignment#readme",
   "dependencies": {
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "eslint-plugin-html": "^6.0.2"
