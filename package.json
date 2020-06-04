@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nevtay/maltem-assignment/issues"
   },
-  "homepage": "https://github.com/nevtay/maltem-assignment#readme"
+  "homepage": "https://github.com/nevtay/maltem-assignment#readme",
+  "dependencies": {
+    "jest": "^26.0.1"
+  }
 }
