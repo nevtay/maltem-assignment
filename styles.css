@@ -1,1 +1,36 @@
 @import "./node_modules/normalize.css/normalize.css";
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    height: 100%;
+}
+
+body {
+    padding: 10px 20px;
+    height: 100%;
+    background-color: #adefd1ff;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    color: #00203FFF
+}
+
+#header {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.container {
+    max-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.container-section {
+    margin: 0 15px;
+}
