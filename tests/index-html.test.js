@@ -18,7 +18,7 @@ describe('index.html', function () {
         expect(bodyTag).toBeTruthy();
     });
 
-    describe('header and container', () => { 
+    describe('header and container elements', () => { 
     it('header and main tags renders', function () {
         const headerTag = document.getElementsByTagName('header');
         expect(headerTag).toBeTruthy();
@@ -39,6 +39,11 @@ describe('index.html', function () {
         const expectedText = "Add Column";
         const addColumnButtonText = addColumnButton.innerHTML;
         expect(addColumnButtonText).toEqual(expectedText);
+    });
+
+    it('search field exists', function () {
+        const searchBox = document.getElementById('search-box');
+        expect(searchBox).toBeTruthy();
     });
 });
 });
