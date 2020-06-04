@@ -14,7 +14,16 @@ describe('index.html', function () {
         jest.resetModules();
     });
 
-    it('html body element renders', function () {
-        expect(document.getElementsByTagName('body')).toBeTruthy();
+    it('body element renders', function () {
+        const bodyTag = document.getElementsByTagName('body');
+        expect(bodyTag).toBeTruthy();
+    });
+
+    it('header and main tags renders', function () {
+        const headerTag = document.getElementsByTagName('header');
+        expect(headerTag).toBeTruthy();
+
+        const mainTag = document.getElementsByTagName('main');
+        expect(mainTag).toBeTruthy();
     });
 });
