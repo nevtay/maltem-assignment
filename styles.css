@@ -13,6 +13,7 @@ body {
     padding: 10px 20px;
     height: 100%;
     background-color: #adefd1ff;
+    overflow-x: scroll;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -25,10 +26,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-    max-width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    max-width: auto;
 }
 
 .flex-center-row {
@@ -37,6 +35,21 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: center;
 }
 
+.flex-center-start {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.flex-inline {
+    display: inline-flex;
+    width: auto;
+}
+
 .container-section {
     margin: 0 15px;
+}
+
+.card {
+    width: 250px;
 }
