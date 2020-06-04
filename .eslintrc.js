@@ -15,7 +15,11 @@ module.exports = {
     "parserOptions": {
         "ecmaVersion": 11
     },
+    {
+    "plugins": ["html"]
+    },
     "rules": {
+        "jest/expect-expect": 0,
         semi: "error",
         quotes: ["error", "double"]
     }
