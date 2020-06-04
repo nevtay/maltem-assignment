@@ -16,7 +16,7 @@ module.exports = {
         "ecmaVersion": 11
     },
     "rules": {
-        semi: ["error", "always"],
+        semi: "error",
         quotes: ["error", "double"]
     }
 };
