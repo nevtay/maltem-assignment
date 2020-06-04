@@ -19,11 +19,9 @@
   "homepage": "https://github.com/nevtay/maltem-assignment#readme",
   "dependencies": {
     "jest": "^26.0.1",
-    "jsdom": "^16.2.2",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@testing-library/dom": "^7.9.0",
     "eslint-plugin-html": "^6.0.2"
   }
 }
