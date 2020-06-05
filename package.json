@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "serve": "serve",
+    "start": "start http://localhost:5000 && serve"
   },
   "repository": {
     "type": "git",
@@ -19,7 +21,8 @@
   "homepage": "https://github.com/nevtay/maltem-assignment#readme",
   "dependencies": {
     "jest": "^26.0.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "serve": "^11.3.2"
   },
   "devDependencies": {
     "eslint": "^7.1.0",
