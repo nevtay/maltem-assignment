@@ -6,12 +6,30 @@ const addCard = (e) => {
   const newCard = document.createElement("card-contents");
   const parentColumnName = e.target.closest(".column").querySelector("#column-title").innerText;
   const parentColumnText = newCard.shadowRoot.querySelector("#card-column-parent-text");
+  const card = newCard.shadowRoot.querySelector(".card");
+  const cardTitle = newCard.shadowRoot.querySelector("#card-title");
   parentColumnText.innerText = parentColumnName;
   cardDisplayArea.appendChild(newCard);
+  cardTitle.setAttribute("contenteditable", true);
+  cardTitle.classList.add("newCardInitalStyle");
+  cardTitle.focus();
+  cardTitle.addEventListener("keypress", preventOverflow);
+  cardTitle.addEventListener("blur", () => {
+    const cardTitleText = cardTitle.innerText;
+    if (!cardTitleText || cardTitleText === "Please add a title") {
+      card.remove();
+    }
+    cardTitle.classList.remove("newCardInitalStyle");
+  });
 };
 
 const preventOverflow = (e) => {
-  const MAX_WIDTH_OF_TITLE = 270;
+  let MAX_WIDTH_OF_TITLE;
+  if (e.target.id === "card-title") {
+    MAX_WIDTH_OF_TITLE = 160;
+  } else {
+    MAX_WIDTH_OF_TITLE = 270;
+  }
   if (e.target.getBoundingClientRect().width >= MAX_WIDTH_OF_TITLE) {
     e.preventDefault();
   };
@@ -60,6 +78,10 @@ const deleteColumn = (e) => {
 
 columnTemplate.innerHTML = `
   <style>
+
+  .newCardInitalStyle {
+    background-color: "#f9f9f9";
+  }
 
   .column {
     padding: 30px 15px 10px 15px;
