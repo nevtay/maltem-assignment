@@ -5,7 +5,8 @@ template.innerHTML = `
     .card {
       background: orange;
       padding: 10px 15px;
-      width: 300px;
+      width: inherit;
+      margin: 10px 0;
     }
     
     .card-container {
@@ -17,7 +18,7 @@ template.innerHTML = `
       margin-top: 10px;
       border: none;
       outline: 0px;
-      width: 296px;
+      width: 260px;
       transition: all 0.1s;
       resize: none;
     }
