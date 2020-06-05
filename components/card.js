@@ -13,6 +13,10 @@ template.innerHTML = `
       width: 100%;
     }
 
+    .card-column-parent {
+      font-size: 12px;
+    }
+
     .card-description {
       height: 100px;
       margin-top: 10px;
@@ -36,6 +40,7 @@ template.innerHTML = `
   <div class="card">
     <div class="card-container">
       <span id="card-title"><slot name="title" /></span>
+      <span class="card-column-parent">Column: <em><span id="card-column-parent-text"></span></em></span>
       <div>
         <button id="deleteBtn">Delete</button>
         <button id="editBtn">Edit</button>
