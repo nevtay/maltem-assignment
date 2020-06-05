@@ -1,7 +1,7 @@
 const template = document.createElement("template");
 
 const autoResize = (element) => {
-  element.style.height = "5px";
+  element.style.height = "auto";
   element.style.height = (element.scrollHeight) + "px";
 };
 
@@ -76,7 +76,7 @@ template.innerHTML = `
       </div>
     </div>
     <div class="card-container">
-      <textarea type="text" class="card-description" oninput="autoResize(this)" onfocus="autoResize(this)" onblur="downSize(this)"></textarea>
+      <textarea type="text" class="card-description" onkeypress="autoResize(this)" onfocus="autoResize(this)" onblur="downSize(this)"></textarea>
     </div>
   </div>
 `;
@@ -89,19 +89,14 @@ class Card extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
     this.shadowRoot.querySelector("#card-title").innerText = this.getAttribute("title");
+    this.shadowRoot.querySelector("#deleteBtn").addEventListener("click", (e) => {
+      const cardElement = e.target.closest(".card");
+      cardElement.remove();
+    });
+    this.shadowRoot.querySelector("#editBtn").addEventListener("click", () => console.log("edited"));
   }
 
-  connectedCallback () {
-    this.shadowRoot
-      .querySelector("#deleteBtn")
-      .addEventListener("click", (e) => {
-        const cardElement = e.target.closest(".card");
-        cardElement.remove();
-      });
-    this.shadowRoot
-      .querySelector("#editBtn")
-      .addEventListener("click", () => console.log("edited"));
-  }
+  connectedCallback () {}
 
   disconnectedCallback () {
     this.shadowRoot.querySelector(".card").removeEventListener();
