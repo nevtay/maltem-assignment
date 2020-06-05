@@ -1,8 +1,10 @@
 const columnTemplate = document.createElement("template");
 const oldTitle = [];
 
-const addCard = () => {
-  console.log("hi");
+const addCard = (e) => {
+  const cardDisplayArea = e.target.closest(".column").querySelector(".card-display-area");
+  const newCard = document.createElement("card-contents");
+  cardDisplayArea.appendChild(newCard);
 };
 
 const preventOverflow = (e) => {
@@ -31,7 +33,6 @@ const editColumnTitle = (e) => {
   if (oldTitle.length < 1) {
     oldTitle.push(columnTitle.innerText);
   }
-  console.log(oldTitle);
   if (e.target.id === "editColumnBtn" || e.target.id === "column-title") {
     columnTitle.addEventListener("keypress", preventOverflow);
     columnTitle.addEventListener("blur", preventEmptyTitle);
@@ -58,10 +59,9 @@ columnTemplate.innerHTML = `
   <style>
 
   .column {
-    padding: 30px 15px;
+    padding: 30px 15px 10px 15px;
     height: auto;
     width: 300px;
-    height: 100px;
     background: #f9f9f9;
     margin: 10px 10px;
   }
@@ -91,6 +91,10 @@ columnTemplate.innerHTML = `
 
   #addCardBtn, #editColumnBtn, #deleteColumnBtn {
     font-size: 10px;
+  }
+
+  .card-display-area {
+    padding: 20px 0 0 0;
   }
 
   </style>
