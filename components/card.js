@@ -8,31 +8,37 @@ template.innerHTML = `
       width: 300px;
     }
     
-    .container {
-      border: 1px solid red;
+    .card-container {
+      width: 100%;
     }
 
     .card-description {
+      height: 100px;
+      margin-top: 10px;
       border: none;
+      outline: 0px;
       width: 296px;
-      height: auto;
+      transition: all 0.1s;
+      resize: none;
     }
+    
     .card-description:not(:focus) {
-      height: 40px;
+      height: auto;
       border: none;
-      background: coral;
+      outline: 0px;
+      background: #d2d2d2;
       appearance: textfield;
       -webkit-appearance: textfield;
     }
     
   </style>
   <div class="card">
-    <div class="container">
+    <div class="card-container">
       <span id="card-title"><slot name="title" /></span>
-    <div class="container">
-      <button id="deleteBtn">Delete</button>
-      <button id="editBtn">Edit</button>
-    </div>
+      <div>
+        <button id="deleteBtn">Delete</button>
+        <button id="editBtn">Edit</button>
+      </div>
     </div>
     <div>
       <textarea type="text" class="card-description"}></textarea>
