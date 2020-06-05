@@ -16,7 +16,8 @@ const addCard = (e) => {
   cardTitle.addEventListener("keypress", preventOverflow);
   cardTitle.addEventListener("blur", () => {
     const cardTitleText = cardTitle.innerText;
-    if (!cardTitleText || cardTitleText === "Please add a title") {
+    if (!cardTitleText) {
+      alert("Card not created due to lack of title");
       card.remove();
     }
     cardTitle.classList.remove("newCardInitalStyle");
