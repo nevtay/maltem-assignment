@@ -4,6 +4,9 @@ const oldTitle = [];
 const addCard = (e) => {
   const cardDisplayArea = e.target.closest(".column").querySelector(".card-display-area");
   const newCard = document.createElement("card-contents");
+  const parentColumnName = e.target.closest(".column").querySelector("#column-title").innerText;
+  const parentColumnText = newCard.shadowRoot.querySelector("#card-column-parent-text");
+  parentColumnText.innerText = parentColumnName;
   cardDisplayArea.appendChild(newCard);
 };
 
