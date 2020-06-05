@@ -42,7 +42,6 @@ template.innerHTML = `
 
     .card-description {
       min-height: 50px;
-      max-height: 200px;
       margin-top: 10px;
       border: none;
       outline: 0px;
